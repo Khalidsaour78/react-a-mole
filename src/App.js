@@ -1,16 +1,30 @@
 
 import './App.css';
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import MoleContainer from "./Components/MoleContainer";
-import trace from "./helper";
+
 
 function App() {
+  const [score, setScore] = useState(0);
+
+  const createMoleHills = () => {
+    const hills = [];
+    for(let j = 0; j < 9; j++) {
+      {
+        hills.push(<MoleContainer key={j} setScore={setScore} score={score} />);
+      }
+    }
+    return (
+      <div>
+        {hills}
+      </div>
+    )
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        
-        <MoleContainer/>
-      </header>
+      <h1>React a Mole!!!</h1>
+      {score}
+      {createMoleHills()}
     </div>
   );
 }

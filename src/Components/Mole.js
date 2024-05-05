@@ -1,10 +1,15 @@
-import { useState, useEffect } from "react";
-import trace from "../helper";
+//
 
-function Mole() {
+import MoleImage from '../images/mole.png'
+
+// import trace from "../helper";
+
+
+function Mole(props) {
+
   return (
-    <div>
-      <span>Mole</span>
+    <div className="mole" onClick={props.moleOnClick}>
+      <img src={MoleImage} alt="Mole"/>
     </div>
   );
 }
